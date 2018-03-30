@@ -16,7 +16,7 @@ class ApplicationController < Sinatra::Base
 
   post '/recipes' do
     Recipe.create(params)
-    redirect '/recipes'
+    redirect '/recipes/#{Recipe.last.id}'
   end
 
   get '/recipes' do
